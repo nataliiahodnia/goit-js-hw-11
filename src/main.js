@@ -3,13 +3,18 @@ import SimpleLightbox from 'simplelightbox';
 // Додатковий імпорт стилів
 import 'simplelightbox/dist/simple-lightbox.min.css';
 
-import { getPhotos } from './js/pixabay-api.js';
-import { createGallaryMarkup } from './js/render-functions.js';
+// Описаний у документації
+import iziToast from 'izitoast';
+// Додатковий імпорт стилів
+import 'izitoast/dist/css/iziToast.min.css';
 
-const list = document.querySelector('.gallary');
+import { getPhotos } from './js/pixabay-api.js';
+import { creategalleryMarkup } from './js/render-functions.js';
+
+const list = document.querySelector('.gallery');
 const form = document.querySelector('.js-form');
 const loader = document.querySelector('.loader');
-let gallery;
+const gallery = new SimpleLightbox('.gallery a');
 
 export function showLoader() {
   loader.classList.remove('is-hidden');
@@ -36,9 +41,8 @@ function onSubmit(event) {
             'Sorry, there are no images matching your search query. Please try again!',
         });
       }
-      list.innerHTML = createGallaryMarkup(res.hits);
-
-      gallery = new SimpleLightbox('.gallary a');
+      list.innerHTML = creategalleryMarkup(res.hits);
+      gallery.refresh();
     })
     .catch(error => {
       console.log(error);

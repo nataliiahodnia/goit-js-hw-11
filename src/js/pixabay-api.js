@@ -1,6 +1,3 @@
-import iziToast from 'izitoast';
-import 'izitoast/dist/css/iziToast.min.css';
-
 export function getPhotos(query) {
   const API_KEY = '43339285-ea15b1a3e45dc18314900d076';
   const baseUrl = 'https://pixabay.com/api/';

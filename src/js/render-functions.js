@@ -1,8 +1,8 @@
-export function createGallaryMarkup(images) {
+export function creategalleryMarkup(images) {
   return images
     .map(
       image => `
-    <li class="gallary-item">
+    <li class="gallery-item">
       <a href="${image.largeImageURL}">
         <img src="${image.webformatURL}" alt="${image.tags}" title="${image.tags}">
       </a>

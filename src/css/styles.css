@@ -36,10 +36,10 @@
   list-style: none;
 }
 
-.gallary {
+.gallery {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center; /* Центрує елементи горизонтально */
+  justify-content: center; 
   gap: 30px;
   list-style: none;
   margin-bottom: 100px;
@@ -54,7 +54,7 @@ img {
   border-left: 1px solid #808080;
   border-right: 1px solid #808080;
 }
-.gallary-item {
+.gallery-item {
   width: 360px;
   height: 200px;
   flex-basis: calc((100% - 120px) / 4);
